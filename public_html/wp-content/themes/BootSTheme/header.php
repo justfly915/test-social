@@ -16,9 +16,8 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="/">Главная</a>
-        <a class="nav-link" href="#">Рекомендуемые</a>
-        <a class="nav-link" href="#">Цена</a>
-        <a class="nav-link disabled">Отключенная</a>
+        <a class="nav-link" href="/novosti">Новости</a>
+        <a class="nav-link" href="/produkcija">Продукция</a>
       </div>
     </div>
   </div>

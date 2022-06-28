@@ -16,7 +16,8 @@ function test_social_news()
         ->add_fields(array(
             Field::make('text', 'test_social_news_header', 'Заголовок')->set_required(true),
             Field::make('textarea', 'test_social_news_text', 'Текст новости')->set_required(true),
-            Field::make('image', 'test_social_news_img', 'Картинка'),
+            Field::make('image', 'test_social_news_img', 'Картинка')
+                ->set_value_type( 'url'),
             Field::make('date', 'crb_event_start_date', 'Дата новости'),
         ));
 }
@@ -98,6 +99,7 @@ function test_social_register_post_type_news()
         'menu_icon' => 'dashicons-welcome-widgets-menus',
         'menu_position' => 2,
         'supports' => array('title', 'editor'),
+        'publicly_queryable' => true,
     );
 
     register_post_type('news', $args);
@@ -132,6 +134,7 @@ function test_social_register_post_type_products()
         'menu_icon' => 'dashicons-products',
         'menu_position' => 3,
         'supports' => array('title', 'editor'),
+        'publicly_queryable' => true,
     );
 
     register_post_type('products', $args);
