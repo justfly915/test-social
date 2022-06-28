@@ -14,3 +14,7 @@ h1,h2 {
 .navbar-toggler-icon {
     background-image: url('assets/bootstrap/img/icon-burger.svg');
 }
+
+img {
+    max-width: 100%;
+}
