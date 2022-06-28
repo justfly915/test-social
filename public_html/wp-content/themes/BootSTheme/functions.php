@@ -1,20 +1,59 @@
 <?php
 
+/**
+ * Настройка carbon fields
+ */
+
+// поля carbon fields для NEWS
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-add_action( 'carbon_fields_register_fields', 'crb_attach_theme_options' ); // Для версии 2.0 и выше
-function crb_attach_theme_options() {
-	Container::make( 'theme_options', __( 'Theme Options', 'crb' ) )
-		->add_fields( array(
-			Field::make( 'text', 'crb_text', 'Text Field' ),
-		) );
+add_action('carbon_fields_register_fields', 'test_social_news');
+function test_social_news()
+{
+    Container::make('post_meta', 'Настройки новости')
+        ->show_on_post_type('news')
+        ->add_fields(array(
+            Field::make('text', 'test_social_news_header', 'Заголовок')->set_required(true),
+            Field::make('textarea', 'test_social_news_text', 'Текст новости')->set_required(true),
+            Field::make('image', 'test_social_news_img', 'Картинка'),
+            Field::make('date', 'crb_event_start_date', 'Дата новости'),
+        ));
 }
 
-add_action( 'after_setup_theme', 'crb_load' );
-function crb_load() {
-	require_once( ABSPATH . '/vendor/autoload.php' );
-	\Carbon_Fields\Carbon_Fields::boot();
+add_action('carbon_fields_register_fields', 'test_social_products');
+function test_social_products()
+{
+    Container::make('post_meta', 'Настройки продукта')
+        ->show_on_post_type('products')
+        ->add_fields(array(
+            Field::make('text', 'test_social_products_header', 'Название')
+                ->set_required(true),
+            Field::make('textarea', 'test_social_products_text', 'Описание'),
+            Field::make('media_gallery', 'test_social_products_gallery', 'Галерея')
+                ->set_type('image')
+                ->set_duplicates_allowed(false),
+            Field::make('complex', 'test_social_products__complect', 'Комплектация')
+                ->add_fields(array(
+                    Field::make('text', 'test_social_products_item_name', 'Наименование'),
+                )),
+            Field::make('select', 'test_social_products_brands', 'Производитель')
+                ->add_options(array(
+                    'Apple' => 'Apple',
+                    'Google' => 'Google',
+                    'Xiaomi' => 'Xiaomi',
+                )),
+            Field::make('text', 'test_social_products_price', 'Стоимость')
+                ->set_required(true)
+                ->set_attribute('type', 'number'),
+        ));
+}
+
+add_action('after_setup_theme', 'crb_load');
+function crb_load()
+{
+    require_once ABSPATH . '/vendor/autoload.php';
+    \Carbon_Fields\Carbon_Fields::boot();
 }
 
 /**
