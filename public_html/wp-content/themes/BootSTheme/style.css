@@ -10,3 +10,7 @@ Author URI: http://test-social.ru.swtest.ru/
 h1,h2 {
     text-align: center;
 }
+
+.navbar-toggler-icon {
+    background-image: url('assets/bootstrap/img/icon-burger.svg');
+}

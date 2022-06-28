@@ -24,7 +24,7 @@
 	<div class="row">
 		<div class="col-12 d-flex justify-content-around">
 		<a href="/" class="btn btn-secondary">На главную</a>
-		<a href="/" class="btn btn-primary">К новостям</a>
+		<a href="/novosti" class="btn btn-primary">К новостям</a>
 		</div>
 	</div>
 </div>

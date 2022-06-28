@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-12 d-flex justify-content-around">
                     <a href="/" class="btn btn-secondary">На главную</a>
-                    <a href="/" class="btn btn-primary">К продукции</a>
+                    <a href="/produkcija" class="btn btn-primary">К продукции</a>
                 </div>
 
 
