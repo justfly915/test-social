@@ -72,7 +72,7 @@ foreach( $my_posts as $post ){
     <h5 class="card-title"><?echo carbon_get_the_post_meta('test_social_products_header')?></h5>
     <p class="card-text"><?echo carbon_get_the_post_meta('test_social_products_text')?></p>
     <p class="card-text"><?echo carbon_get_the_post_meta('test_social_products_price')?> руб.</p>
-    <a href="<?the_permalink();?>" class="btn btn-primary">К новости</a>
+    <a href="<?the_permalink();?>" class="btn btn-primary">Подробнее</a>
   </div>
 </div>
 </div>
