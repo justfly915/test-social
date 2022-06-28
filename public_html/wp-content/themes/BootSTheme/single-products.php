@@ -2,7 +2,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm col-md-6">
+		<div class="col-sm-12 col-md-6">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
       <?php $slides = carbon_get_post_meta(get_the_ID(), 'test_social_products_gallery');?>
@@ -22,7 +22,7 @@
   </button>
 </div>
 		</div>
-		<div class="col-sm col-md-6">
+		<div class="col-sm-12 col-md-6">
             <div class="row">
                 <div class="col-12">
                     <h1><?echo carbon_get_the_post_meta('test_social_products_header')?></h1>
