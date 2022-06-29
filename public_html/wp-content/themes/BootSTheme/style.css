@@ -7,7 +7,8 @@ Author: Andrey Efremov
 Author URI: http://test-social.ru.swtest.ru/
 */
 
-h1,h2 {
+h1,
+h2 {
     text-align: center;
 }
 
@@ -18,3 +19,55 @@ h1,h2 {
 img {
     max-width: 100%;
 }
+
+.card {
+    padding: 10px;
+}
+
+.page-front__item__wrapper {}
+
+.page-front__item,
+.page-category__item {
+    height: 100%;
+}
+
+.product__item__price {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.footer {
+    height: 150px;
+    background-color: darkgray;
+    margin-top: 40px;
+}
+
+@media(max-width:991px) {
+
+    .card-body p,
+    .card-body .btn {
+        font-size: 12px;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-body .card-text {
+        margin: 0;
+    }
+
+    .news__item .card-body p:last-of-type {
+        flex-grow: 1;
+    }
+
+    .product__item .product__item__price {
+        flex-grow: 1;
+        display: flex;
+        align-items: end;
+        padding-bottom: 10px;
+    }
+}
+

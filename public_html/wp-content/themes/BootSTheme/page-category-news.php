@@ -5,10 +5,11 @@ Template Name: Страница всех новостей
 ?>
 
 <?get_header();?>
+<div class="page-category">
 <div class="container">
     <div class="row mb-5">
         <div class="col-12">
-            <h1>Все новости</h1>
+            <h1 class="page-category__h1">Все новости</h1>
         </div>
 
 <?
@@ -30,8 +31,8 @@ foreach( $my_posts as $post ){
     $thumbnail_id = carbon_get_the_post_meta('test_social_news_img'); // получим ID картинки из опции темы
     $thumbnail_url = wp_get_attachment_image_url( $thumbnail_id, 'thumbnail' );  // ссылка на полный размер картинки по ID вложения
 ?>
-<div class="col-sm-12 col-md-3 mb-3">
-<div class="card">
+<div class="col-sm-12 col-md-3 mb-3 page-category__item__wrapper">
+<div class="card page-category__item">
   <img src="<?echo $thumbnail_url;?>" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"><?echo carbon_get_the_post_meta('test_social_news_header')?></h5>
@@ -43,6 +44,7 @@ foreach( $my_posts as $post ){
 <?
 }
 wp_reset_postdata();?>
+</div>
 </div>
 </div>
 

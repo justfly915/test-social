@@ -4,7 +4,7 @@
  $thumbnail_id = carbon_get_the_post_meta('test_social_news_img'); // получим ID картинки из опции темы
  $thumbnail_url = wp_get_attachment_image_url( $thumbnail_id, 'full' );  // ссылка на полный размер картинки по ID вложения
 ?>
-
+<div class="page-single">
 <div class="container">
 	<div class="row d-flex justify-content-center">
 		<div class="col-12 d-flex justify-content-center">
@@ -12,12 +12,12 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-12">
+		<div class="col-12 page-single__h1">
 			<h1><?echo carbon_get_the_post_meta('test_social_news_header')?></h1>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-12">
+		<div class="col-12 page-single__text">
 			<?echo carbon_get_the_post_meta('test_social_news_text')?>
 		</div>
 	</div>
@@ -27,6 +27,7 @@
 		<a href="/novosti" class="btn btn-primary">К новостям</a>
 		</div>
 	</div>
+</div>
 </div>
 
 <?get_footer();?>

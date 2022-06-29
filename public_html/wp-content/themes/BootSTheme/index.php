@@ -1,14 +1,15 @@
 <?get_header();?>
+<div class="page-front">
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1>Добро пожаловать на сайт-задание для M-Сошал!</h1>
+            <h1 class="page-front__h1">Добро пожаловать на сайт-задание для M-Сошал!</h1>
         </div>
     </div>
 
 <div class="row mb-5 d-flex justify-content-center">
     <div class="col-12">
-        <h2>Новости</h2>
+        <h2 class="page-front__h2">Новости</h2>
     </div>
 
 <?
@@ -31,8 +32,8 @@ foreach( $my_posts as $post ){
     $thumbnail_id = carbon_get_the_post_meta('test_social_news_img'); // получим ID картинки из опции темы
     $thumbnail_url = wp_get_attachment_image_url( $thumbnail_id, 'thumbnail' );  // ссылка на полный размер картинки по ID вложения
 ?>
-<div class="col-sm-12 col-md-3 mb-3">
-<div class="card">
+<div class="col-sm-12 col-md-3 mb-3 page-front__item__wrapper">
+<div class="card page-front__item  news__item">
   <img src="<?echo $thumbnail_url;?>" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"><?echo carbon_get_the_post_meta('test_social_news_header')?></h5>
@@ -47,7 +48,7 @@ wp_reset_postdata();?>
 </div>
 <div class="row d-flex justify-content-center">
 <div class="col-12">
-            <h2>Продукция</h2>
+            <h2 class="page-front__h2">Продукция</h2>
         </div>
 <?
 // вывод продукции
@@ -70,18 +71,19 @@ foreach( $my_posts as $post ){
     $thumbnail_url = wp_get_attachment_image_url( $slides[0], 'thumbnail' );  // ссылка на полный размер картинки по ID вложения
 ?>
 <div class="col-sm-12 col-md-3 mb-3">
-<div class="card">
+<div class="card page-front__item product__item">
   <img src="<?echo $thumbnail_url;?>" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"><?echo carbon_get_the_post_meta('test_social_products_header')?></h5>
     <p class="card-text"><?echo mbCutString(carbon_get_the_post_meta('test_social_products_text'), 100);?></p>
-    <p class="card-text"><?echo carbon_get_the_post_meta('test_social_products_price')?> руб.</p>
+    <p class="card-text product__item__price"><?echo carbon_get_the_post_meta('test_social_products_price')?> руб.</p>
     <a href="<?the_permalink();?>" class="btn btn-primary">Подробнее</a>
   </div>
 </div>
 </div>
 <?}
 wp_reset_postdata();?>
+</div>
 </div>
 </div>
 
