@@ -16,8 +16,7 @@ function test_social_news()
         ->add_fields(array(
             Field::make('text', 'test_social_news_header', 'Заголовок')->set_required(true),
             Field::make('textarea', 'test_social_news_text', 'Текст новости')->set_required(true),
-            Field::make('image', 'test_social_news_img', 'Картинка')
-                ->set_value_type( 'url'),
+            Field::make('image', 'test_social_news_img', 'Картинка'),
             Field::make('date', 'crb_event_start_date', 'Дата новости'),
         ));
 }
